@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Love For you</title>
+    <link rel="stylesheet" href="stye.css">
+</head>
+<body>
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Love For You</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 💖 Welcome Screen -->
+  <div class="welcome-screen" id="welcomeScreen">
+    <h2>Hey Cutie! What's your name? 💖</h2>
+    <input type="text" id="nameInput" placeholder="Type your name..." />
+    <button class="start-button" onclick="startLetter()">Open the Letter 💌</button>
+  </div>
+
+  <!-- 💌 Main Letter Content -->
+  <div class="container" id="letterContainer" style="display: none;">
+    <h1 id="recipientName"></h1>
+
+    <div class="letter">
+      <p>Hey Cutie whatsapp!! 🙂</p>
+      <p>You are the cutest human being I’ve ever seen. The most beautiful part of you is your smile — keep smiling always 😊</p>
+      <p>I love you more than words can express 💕</p>
+      <p>I love the way you talk, the way you argue, I love everything about you 😘</p>
+      <p>People say accidents are bad, but meeting you is the best accident of my life 🥹</p>
+      <p><strong>Your cutie, yk whoooo righttt 😎</strong></p>
+    </div>
+
+    <div class="letter">
+      <p>You are the dream I never want to wake up from ❤️</p>
+    </div>
+
+    <div class="letter">
+      <p>You are my sunshine 😝, my starlight 🌟, and my reason to smile every day 😊</p>
+      <p>Sending all the hugs and kisses your way 💋💗💓💞💘</p>
+    </div>
+  </div>
+
+  <!-- 🎵 Background Music -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="music.mp3" type="audio/mp3" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- 💗 Floating Hearts -->
+  <span class="emoji-heart" style="left: 10%;">💕</span>
+  <span class="emoji-heart" style="left: 30%;">🖤</span>
+  <span class="emoji-heart" style="left: 50%;">💞</span>
+  <span class="emoji-heart" style="left: 70%;">💙</span>
+  <span class="emoji-heart" style="left: 90%;">❤️</span>
+
+  <!-- 💻 JavaScript -->
+  <script>
+    function startLetter() {
+      const name = document.getElementById('nameInput').value;
+      if (name.trim() === "") {
+        alert("Please enter your name first cutie! 🥺");
+        return;
+      }
+
+      document.getElementById('recipientName').innerText = `To my fav human being, ${name} 😩`;
+      document.getElementById('welcomeScreen').style.display = 'none';
+      document.getElementById('letterContainer').style.display = 'block';
+
+      // Start background music if browser blocked autoplay
+      const music = document.getElementById('bgMusic');
+      music.play().catch(() => {
+        console.log("Autoplay blocked. User interaction required.");
+      });
+    }
+  </script>
+
+</body>
+</html>
